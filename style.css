@@ -1,0 +1,298 @@
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: #00FFFF;
+}
+
+/* INPUT & CARD */
+input[type=number] {
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(186, 153, 153, 0.8);
+  color: #333;
+  width: 100%;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+input[type=number]:focus {
+  outline: none;
+  transform: scale(1.03);
+  border: 2px solid #00FFFF;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+/* DIGITAL CLOCK STYLE */
+.digital-time {
+  font-size: 4rem;
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  margin: auto;
+  text-shadow: 0 0 8px #00FFFF;
+}
+
+/* General button style */
+button {
+  padding: 0.75rem 1.25rem;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px; /* Lebih kotak */
+  cursor: pointer;
+  font-weight: 600;
+  min-width: 130px;
+  white-space: nowrap;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* Warna tombol */
+#startBtn { background-color: #28a745; color: white; }
+#stopBtn { background-color: #dc3545; color: white; }
+#restartBtn { background-color: #ffc107; color: black; }
+#skipBtn { background-color: #007bff; color: white; }
+
+/* Tombol container */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* jarak antar tombol */
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.page {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+  display: none;
+  padding-top: 100px;
+}
+
+.page.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  margin-top: 50px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.content h2 {
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.content p {
+  margin: 10px 0;
+  line-height: 1.6;
+  color: #d4d4d4;
+  text-align: justify;
+}
+
+
+/* LOADING */
+.loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: #0f2027;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader {
+  border: 6px solid #fff;
+  border-top: 6px solid #00FFFF;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: #fff;
+  background: linear-gradient(270deg, #2E8B57, #001F3F, #3a1c71, #d76d77, #ffaf7b);
+  background-size: 1000% 1000%;
+  animation: aurora 20s ease infinite;
+}
+
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+body {
+  animation: auroraBackground 20s ease-in-out infinite;
+  background: linear-gradient(45deg, #2e8b57, #001f3f, #004466, #336666);
+  background-size: 400% 400%;
+}
+
+/* Efek background animasi */
+@keyframes auroraBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Efek logo slime dan melting */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-melt {
+  width: 40px;
+  height: 40px;
+  animation: slimeWobble 4s ease-in-out infinite;
+  transition: transform 0.5s;
+}
+
+@keyframes slimeWobble {
+  0%, 100% { transform: scaleY(1) rotate(0deg); }
+  50% { transform: scaleY(1.2) rotate(-3deg); }
+}
+
+/* Putar saat loading */
+#loadingScreen .logo-melt {
+  animation: rotateLogo 1s linear infinite;
+}
+
+@keyframes rotateLogo {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.digital-time-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 0.3em;
+  font-size: 4rem;
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(255,255,255,0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  text-shadow: 0 0 8px #00FFFF;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+
+.digit, .colon {
+  opacity: 0;
+  transform: scale(2) translateY(-100px) rotate(90deg);
+  animation: assemble 1s forwards;
+}
+
+.digit:nth-child(1) { animation-delay: 0.2s; }
+.digit:nth-child(2) { animation-delay: 0.4s; }
+.colon            { animation-delay: 0.6s; }
+.digit:nth-child(4) { animation-delay: 0.8s; }
+.digit:nth-child(5) { animation-delay: 1s; }
+
+@keyframes assemble {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0);
+  }
+}
